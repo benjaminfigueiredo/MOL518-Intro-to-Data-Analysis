@@ -1,5 +1,5 @@
 # MOL518-Intro-to-Data-Analysis
-Teaching materials for Princeton University MOL518/BPY518
+Teaching materials for Princeton University MOL518
 
 ## Lecture Notebooks (Will open in Google Colab)
 
