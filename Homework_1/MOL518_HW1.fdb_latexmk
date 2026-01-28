@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1769610664 "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.tex" "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.pdf" "MOL518_HW1" 1769610664
-  "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.aux" 1769610664 662 b2b94621371df8d9296b8bf5bec1b851 ""
-  "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.tex" 1769610663 5325 fa9b41ad3527d910dc2348c39c692c0f ""
+["pdflatex"] 1769610941 "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.tex" "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.pdf" "MOL518_HW1" 1769610942
+  "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.aux" 1769610942 662 b2b94621371df8d9296b8bf5bec1b851 ""
+  "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.tex" 1769610941 4785 b0795e32fc081485c50377ac0d8147ed ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -28,7 +28,6 @@
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
-  "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
@@ -83,13 +82,13 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1557342086 4259635 562fc36ec496993777a6c428d8bfb811 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "MOL518_HW1.aux" 1769610664 662 b2b94621371df8d9296b8bf5bec1b851 "pdflatex"
-  "MOL518_HW1.out" 1769610664 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "MOL518_HW1.tex" 1769610663 5325 fa9b41ad3527d910dc2348c39c692c0f ""
+  "MOL518_HW1.aux" 1769610942 662 b2b94621371df8d9296b8bf5bec1b851 "pdflatex"
+  "MOL518_HW1.out" 1769610942 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "MOL518_HW1.tex" 1769610941 4785 b0795e32fc081485c50377ac0d8147ed ""
   (generated)
-  "MOL518_HW1.aux"
-  "MOL518_HW1.out"
   "MOL518_HW1.pdf"
-  "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.log"
   "MOL518_HW1.log"
+  "MOL518_HW1.aux"
   "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.pdf"
+  "MOL518_HW1.out"
+  "/Users/jshaevitz/Library/CloudStorage/Dropbox/Documents/Teaching/MOL518_Programming/MOL518-Intro-to-Data-Analysis/Homework_1/MOL518_HW1.log"
