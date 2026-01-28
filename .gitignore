@@ -1,2 +1,24 @@
 .DS_Store
 Lecture_2/.DS_Store
+
+# LaTeX build artifacts (keep .tex sources and final PDFs tracked)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# Editor / TeX tooling
+_minted*
+*.nav
+*.snm
+*.vrb
