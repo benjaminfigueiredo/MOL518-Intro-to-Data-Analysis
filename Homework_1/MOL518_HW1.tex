@@ -57,14 +57,14 @@ Figure~\ref{fig:stryerpreface} is the preface page for Lubert Stryer's classic t
 
 \section*{Problem 2: Wet-Lab Arithmetic}
 
-You are doing a phage infection assay. You have a tube of virus stock at a known titer, and you want to prepare an inoculum at a target multiplicity of infection (MOI) in a specified final volume. You will now prepare a mini ``protocol note'' for yourself: define variables clearly, keep track of units, and print a short summary at the end.
+You are doing a phage infection assay. You have a tube of virus stock at a known titer, and you want to prepare an inoculum at a target multiplicity of infection (MOI) in a specified final volume. You will now prepare a mini ``protocol note'' for yourself: define variables clearly, keep track of units, and print a short summary at the end. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error}
 
 \begin{enumerate}[label=\alph*)]
   \item In a single code cell, define the following variables:
   \begin{itemize}
-    \item \texttt{cells} = 250000 \quad (cells)
+    \item \texttt{cells} = 250,000 \quad (cells)
     \item \texttt{moi} = 1.5 \quad (dimensionless)
-    \item \texttt{titer} = 2.0e8 \quad (infectious units per mL)
+    \item \texttt{titer} = $2.0 \times 10^8$ \quad (infectious units per mL)
     \item \texttt{inoc\_vol\_uL} = 500 \quad ($\mu$L total inoculation volume)
   \end{itemize}
 
@@ -79,11 +79,12 @@ You are doing a phage infection assay. You have a tube of virus stock at a known
 
 \section*{Problem 3: CSV Sanity Check}
 
-You ran a plate reader growth experiment and saved the results as a CSV file. Before doing any serious analysis, you want to do a fast sanity check to confirm the file saved correctly, the sampling looks consistent, and the values are in a reasonable range.
+You ran a plate reader growth experiment and saved the results as a CSV file. Before doing any serious analysis, you want to do a fast sanity check to confirm the file saved correctly, the sampling looks consistent, and the values are in a reasonable range. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error}
 
 \begin{enumerate}[label=\alph*)]
   \item Load \texttt{Lecture\_2/data/growth\_curve1.csv} as a 2D NumPy array called \texttt{data}.
-  \item Print the shape of \texttt{data}. What does this tell you? Then print the first row and the last row, and briefly describe what those rows mean.
+  \item Print the shape of \texttt{data}. Describe what this tell you. 
+  \item Print the first row and the last row, and briefly describe what those rows mean.
   \item Extract \texttt{time} in seconds and \texttt{od} as 1D arrays.
   \item Compute and print the sampling interval, the time between consecutive timepoints, in minutes.
   \item Compute and print the total duration of the experiment in units of days.
@@ -94,54 +95,46 @@ You ran a plate reader growth experiment and saved the results as a CSV file. Be
   \end{itemize}
 \end{enumerate}
 
-\section*{Problem 4: Create, Transform, and Save a Synthetic Dataset (No Loops)}
-(15 points)
+\section*{Problem 4: Fake data!}
 
-In real life, your first dataset might be messy: missing points, noise, odd formatting, or surprising values. In this problem, you will generate a tiny \emph{synthetic} dataset where you control the structure and the meaning of each column.
-
-Think of this as a practice run for the workflow: create arrays, combine them into a table, write to disk, reload, and confirm nothing got scrambled.
-
-\textbf{Do not use \texttt{for} loops or \texttt{if} statements in this problem.}
+In this problem, you will generate a small \emph{synthetic} growth curve dataset. ``Fake'' data can be very useful for testing code, practicing analysis, or simulating experiments because you know exactly what to expect. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error}
 
 \begin{enumerate}[label=\alph*)]
-  \item Create a NumPy array called \texttt{time\_hr} with these time points (hours): \texttt{[0, 1, 2, 4, 8, 16]}. Print it.
-  \item Define \texttt{od0 = 0.08} and \texttt{doubling\_time\_hr = 1.5}. In one Markdown sentence, explain (conceptually) what ``doubling time'' means.
-  \item Compute \texttt{od} using: \texttt{od = od0 * 2**(time\_hr/doubling\_time\_hr)}. Print \texttt{od}.
-  \item Create \texttt{od\_norm} by normalizing \texttt{od} to its first value. Print \texttt{od\_norm}.
-  \item Use \texttt{np.column\_stack} to make a 2D array (a mini table) with columns \texttt{time\_hr}, \texttt{od}, \texttt{od\_norm}. Print the resulting array and its shape.
-  \item Save the result to \texttt{Homework\_1/simulated\_growth.csv} using \texttt{np.savetxt(..., delimiter=",")}. (This path is relative to the repository root.)
-  \item Reload the file you saved into \texttt{data2}. Print \texttt{data2.shape} and the first 3 rows, and confirm (in a sentence) that the reloaded numbers match what you expect.
+  \item Create a NumPy array called \texttt{time\_hr} with time points in hours the go from 0 to 12 hours in increments of 0.25 hours. Print \texttt{time\_hr} to check that it looks correct.
+  \item Define two variables: \texttt{od0 = 0.08} and \texttt{doubling\_time\_hr = 1.5}. Explain what ``doubling time'' means in the context of bacterial growth.
+  \item Compute the \texttt{od} time series using the following fomula
+  \begin{equation}
+  OD = OD_0 \times 2^\frac{t}{t_{doubling}}.
+  \end{equation}
+  Print \texttt{od} to confirm your results.
+  \item Normalize \texttt{od} by its first value. Print \texttt{od\_norm}.
+  \item Use \texttt{np.column\_stack} to make a 2D array with columns \texttt{time\_hr}, \texttt{od}, \texttt{od\_norm}. Print the resulting array and its shape.
+  \item Save the result to \texttt{simulated\_growth.csv}.
+  \item Reload the file you saved into a varaible \texttt{data2}. Print \texttt{data2.shape} and the first 3 rows, and confirm that the reloaded numbers match what you expect.
 \end{enumerate}
 
-\section*{Problem 5: Lists --- Sample Tracking and Lane Batching (No Loops)}
-(15 points)
+\section*{Problem 5: Sample Tracking and Lane Batching}
 
-You are organizing samples for a downstream assay (e.g., loading lanes on a gel, assigning sequencing lanes, or planning a plate layout). In practice, a lot of mistakes come from simple bookkeeping: missing a sample, duplicating a label, or mixing the order.
-
-In this problem, you will treat a Python list as your ``sample sheet'' and practice simple, reliable operations: counting, appending, sorting, and slicing into batches.
-
-\textbf{Do not use \texttt{for} loops or \texttt{if} statements in this problem.}
+You will often need to organize samples into a workable datastructure for downstream analysis. In this problem, you will treat a Python list as your ``sample sheet'' and practice counting, appending, sorting, and slicing into batches. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error}
 
 \begin{enumerate}[label=\alph*)]
-  \item Create a Python list called \texttt{samples} with the following sample IDs (strings), in this exact order:
+  \item Create a Python list called \texttt{samples} with the following sample IDs, in this exact order:
 
 \begin{lstlisting}[language=Python]
-samples = [
-    "WT_A", "WT_B", "WT_C", "KO1_A", "KO1_B", "KO1_C",
+"WT_A", "WT_B", "WT_C", "KO1_A", "KO1_B", "KO1_C",
     "KO2_A", "KO2_B", "KO2_C", "Rescue_A", "Rescue_B", "Rescue_C"
-]
 \end{lstlisting}
 
-  \item Print the number of samples using \texttt{len(samples)} and briefly interpret what that number means in this context.
+  \item Print the number of samples using the list and briefly interpret what that number means in this context.
   \item Append two new samples to the end of the list: \texttt{"Blank"} and \texttt{"PositiveCtrl"}. Print the updated list.
-  \item Create a new list called \texttt{samples\_sorted} that is an alphabetically sorted version of \texttt{samples} (do not change the original list). Print both lists to demonstrate that only the new one was sorted.
+  \item Create a new list called \texttt{samples\_sorted} that is an alphabetically sorted version of \texttt{samples}. Print both lists (original and new) to demonstrate that only the new one was sorted.
   \item Imagine you can only process 5 samples per ``lane'' (or batch). Create three new lists by slicing \texttt{samples\_sorted}:
   \begin{itemize}
     \item \texttt{lane1} = first 5 samples
     \item \texttt{lane2} = next 5 samples
     \item \texttt{lane3} = remaining samples
   \end{itemize}
-  \item Print \texttt{lane1}, \texttt{lane2}, and \texttt{lane3}. In a short Markdown note, explain why slicing is a safer approach than manually retyping sample IDs.
+  \item Print \texttt{lane1}, \texttt{lane2}, and \texttt{lane3}. Do you think slicing a safer approach than manually retyping sample IDs? What if your list had 1000 samples?
 \end{enumerate}
 
 
