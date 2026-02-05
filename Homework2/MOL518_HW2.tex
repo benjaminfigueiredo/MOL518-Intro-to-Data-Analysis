@@ -47,57 +47,57 @@ For this assignment, you will generate and then submit a Jupyter notebook on Can
 
 \section*{Problem 1: Looping Through Subplots}
 
-Use the file \texttt{ecoli\_drugs.csv}. This file has time in the first column and six drug growth curves in the next six columns. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error.}
+This problem uses the file \texttt{ecoli\_drugs.csv} which we used in Lecture 3. This file has time in the first column and six drug growth curves in the next six columns. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error or to help understand why your code isn't working properly.}
 
 \begin{enumerate}[label=\alph*)]
-  \item Load the CSV file using NumPy (skip the header row).
-  \item Create a list of the six OD arrays in the order: Rifampicin, Novabiocin, Trimethoprim, Chloramphenicol, Ampicillin, Gentamycin.
-  \item Create a matching list of drug name strings.
-  \item Use \texttt{plt.subplots} to make a 3x2 grid. Fill the panels using \textbf{for loops only} (no manual \texttt{axes[0,0]} indexing). Each panel should include a title and axis labels.
-  \item Save the figure as \texttt{drug\_growth\_curves\_hw2.png} and \texttt{drug\_growth\_curves\_hw2.pdf}.
+  \item Load the CSV file.
+  \item Create a list of the six OD arrays in the following order: Rifampicin, Novabiocin, Trimethoprim, Chloramphenicol, Ampicillin, Gentamycin.
+  \item Create a matching list of drug names.
+  \item Use \texttt{plt.subplots} to make a 3x2 grid. In class we filled the grid by brute force. Here, fill the panels using \textbf{for loops}, i.e. no manual \texttt{axes[0,0]} indexing. Each panel should include a title and axis labels.
 \end{enumerate}
 
-\section*{Problem 2: Mystery Scatter + Threshold Count}
+\section*{Problem 2: Mystery Data}
 
-Use the file \texttt{Homework2/HW2\_data/mystery.csv}. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error.}
+This problem uses the file \texttt{mystery.csv}. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error or to help understand why your code isn't working properly.}
 
 \begin{enumerate}[label=\alph*)]
-  \item Load the data into two 1D arrays called \texttt{x} and \texttt{y}.
-  \item Make a scatter plot of \texttt{y} vs \texttt{x}. Label both axes.
-  \item Using a \texttt{for} loop and an \texttt{if} statement, count how many points have \texttt{y > 25}. Store the count as \texttt{n\_above}.
-  \item Save a tiny CSV file called \texttt{mystery\_summary.csv} with two columns: \texttt{threshold} and \texttt{n\_above}.
+  \item First, inspect the csv file. Then load the file and put the data into two 1D arrays called \texttt{x} and \texttt{y}.
+  \item Make a scatter plot of \texttt{y} vs \texttt{x}.
+  \item Count how many points have \texttt{y > 5} and display the answer.
+  \item Now, repeat this counting for thresholds of 5, 10, 15, 20, and 25. Store the results in two lists: \texttt{thresholds} and \texttt{n\_above}.
+  \item Make a line plot of \texttt{n\_above} vs \texttt{thresholds}.
+  \item Save a CSV file called \texttt{mystery\_summary.csv} with two columns: \texttt{threshold} and \texttt{n\_above}.
 \end{enumerate}
 
-\section*{Problem 3: File System Scavenger (Microscopy Images)}
+\section*{Problem 3: Summary of Microscopy Images}
 
-In \texttt{Homework2/HW2\_data/images} there are 20 microscopy-style \texttt{.tif} files with scientific filenames. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error.}
+In the \texttt{images} folder there are 20 microscopy \texttt{.tif} files. {\it Do not use AI to generate code for this problem. This problem has some things we only touched on, you may use AI to help solve the problem but make sure to follow the guidelines in the syllabus.}
 
 \begin{enumerate}[label=\alph*)]
-  \item Use \texttt{pathlib.Path} to list all \texttt{.tif} files in this folder and print the total count.
+  \item Use \texttt{pathlib.Path} to list all \texttt{.tif} files in the folder and print the total count.
   \item Print the names of the first 5 files (alphabetical order).
   \item For each filename, split the stem on underscores (\texttt{\_}) and extract the cell line (the second field, e.g. \texttt{HeLa} in \texttt{2026-02-05\_HeLa\_DAPI\_ctrl\_FOV01.tif}).
   \item Use a dictionary to count how many images belong to each cell line, then print the dictionary.
 \end{enumerate}
 
-\section*{Problem 4: Bimodal Expression and Bin Size}
+\section*{Problem 4: The Effect of Bin Size}
 
-Use the file \texttt{Homework2/HW2\_data/SOX2\_expression.csv} which contains one column of expression values. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error.}
-
+This problem uses the file \texttt{SOX2\_expression.csv} which contains a column of expression values. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error or to help understand why your code isn't working properly.}
 \begin{enumerate}[label=\alph*)]
-  \item Load the expression values into a 1D array.
-  \item Make a histogram with a small number of bins (e.g. 8). Title the plot and label axes.
+  \item Load the expression values into an array.
+  \item Make a histogram with 8 bins.
   \item Create a 1x3 grid of histograms for bin counts \texttt{[8, 20, 40]}. Use \texttt{plt.subplots} and a \texttt{for} loop to fill the panels.
   \item In 2--3 sentences, explain how the choice of bin size changes what you perceive about the distribution.
 \end{enumerate}
 
 \section*{Problem 5: Replicate Growth Curves and the Mean}
 
-Use the file \texttt{Homework2/HW2\_data/ecoli\_growth\_replicates.csv}. The first column is time (hours) and the next 10 columns are OD replicates. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error.}
+This problem uses the file  \texttt{ecoli\_growth\_replicates.csv}. The first column is time (hours) and the next 10 columns is OD from replicate experiments. {\it Do not use AI to generate code for this problem. You may use AI to debug if you get an error or to help understand why your code isn't working properly.}
 
 \begin{enumerate}[label=\alph*)]
   \item Load the CSV file into a 2D NumPy array. Extract \texttt{time} and a 2D array \texttt{od\_reps}.
   \item Plot all 10 replicate curves on the same axes in different colors.
-  \item Compute the mean OD at each timepoint (average across replicates). Plot the mean as a thick black line on the same figure.
+  \item Compute the mean OD at each timepoint (average across replicates). Plot the mean OD as a thick black line on the same figure.
   \item Save a new CSV file called \texttt{ecoli\_growth\_mean.csv} with two columns: \texttt{time\_hr} and \texttt{od\_mean}.
 \end{enumerate}
 
